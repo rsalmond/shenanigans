@@ -43,7 +43,7 @@ Add the following to ~/.ssh/config.
 
 ```
 Host support-mini
-    Hostname support-mini.jaalam.net
+    Hostname support-mini
     User support
     IdentityFile ~/.ssh/id_mac
 ```

@@ -4,12 +4,16 @@ import random as _random
 from time import sleep
 
 env.use_ssh_config = True
-env.hosts = ['support-mac']
+env.hosts = ['support-mini']
 
 youtube_urls = {'pizza': 'https://www.youtube.com/watch?v=SIt2CdbBo_w',
         'manamana': 'https://www.youtube.com/watch?v=8N_tupPBtWQ',
         'lobster': 'https://www.youtube.com/watch?v=qf_LzWQ0jpI', 
-        'happy': 'https://www.youtube.com/watch?v=d-diB65scQU'}
+        'happy': 'https://www.youtube.com/watch?v=d-diB65scQU',
+        'yepyep': 'https://www.youtube.com/watch?v=vh3tuL_DVsE'}
+
+def yepyep():
+    run('open %s' % (youtube_urls['yepyep']))
 
 def pizza():
     run('open %s' % (youtube_urls['pizza']))
