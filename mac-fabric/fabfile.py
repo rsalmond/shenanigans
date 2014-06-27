@@ -35,19 +35,31 @@ def say(say_this=None):
     if say_this is not None:
         run('say %s' % (say_this))
 
-def vol(level=None):
-    """ vol - get current volume / vol:## - set current volume """
+def vol(level=None, delta=None):
+    """ 'vol' get vol / 'vol:##' or vol:'-##' or '+##' set vol """
     if level is None:
         run("osascript -e 'output volume of (get volume settings)'")
         return
 
     #set the volume
     try:
-        volume = int(level)
+        newvol = int(level)
     except ValueError:
         print 'Invalid volume value. Valid range: 0-100'
         return
-    run("osascript -e 'set volume output volume %s'" % (volume))
+
+    if level[:1] in ('-','+'):
+        delta = True
+
+    if delta:
+        oldvol = run("osascript -e 'output volume of (get volume settings)'")
+        run("osascript -e 'set volume output volume %s'" % (int(oldvol) +
+            newvol))
+    else:
+        run("osascript -e 'set volume output volume %s'" % (newvol))
+
+def test():
+    run("stuff=`ls -alh`; echo $stuff")
 
 def snap():
     tmpfile = '/tmp/mac-mini %s.jpg' % (datetime.now())
