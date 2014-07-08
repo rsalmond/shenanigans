@@ -10,7 +10,15 @@ youtube_urls = {'pizza': 'https://www.youtube.com/watch?v=SIt2CdbBo_w',
         'manamana': 'https://www.youtube.com/watch?v=8N_tupPBtWQ',
         'lobster': 'https://www.youtube.com/watch?v=qf_LzWQ0jpI', 
         'happy': 'https://www.youtube.com/watch?v=d-diB65scQU',
-        'yepyep': 'https://www.youtube.com/watch?v=vh3tuL_DVsE'}
+        'yepyep': 'https://www.youtube.com/watch?v=vh3tuL_DVsE',
+        'systemisdown': 'https://www.youtube.com/watch?v=ILVfzx5Pe-A',
+        'wompwomp': 'https://www.youtube.com/watch?v=sC75aU47GRk'}
+
+def wompwomp():
+    run('open %s' % (youtube_urls['wompwomp']))
+
+def systemisdown():
+    run('open %s' % (youtube_urls['systemisdown']))
 
 def yepyep():
     run('open %s' % (youtube_urls['yepyep']))
@@ -30,6 +38,9 @@ def happy():
 def random():
     x = _random.choice(youtube_urls.values())
     run('open %s' % (x))
+
+def coffee():
+    run('open http://support-coffeecam.jaalam.net')
 
 def say(say_this=None):
     if say_this is not None:
