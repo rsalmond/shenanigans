@@ -35,6 +35,16 @@ def say(say_this=None):
     if say_this is not None:
         run('say %s' % (say_this))
 
+def temperature():
+	import os
+	from subprocess import Popen, PIPE
+
+	process = Popen(["curl", "-G", "http://support-coffeecam.jaalam.net/kitchen-temperature.php"], stdout=PIPE)
+	output, err = process.communicate()
+	exit_code = process.wait()
+        temperature = "The kitchen is currently " + output + " degrees celcius"
+        run('say %s' % (temperature)) 
+
 def vol(level=None, delta=None):
     """ 'vol' get vol / 'vol:##' or vol:'-##' or '+##' set vol """
     if level is None:
