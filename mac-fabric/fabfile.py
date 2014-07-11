@@ -10,26 +10,22 @@ youtube_urls = {'pizza': 'https://www.youtube.com/watch?v=SIt2CdbBo_w',
         'manamana': 'https://www.youtube.com/watch?v=8N_tupPBtWQ',
         'lobster': 'https://www.youtube.com/watch?v=qf_LzWQ0jpI', 
         'happy': 'https://www.youtube.com/watch?v=d-diB65scQU',
-        'yepyep': 'https://www.youtube.com/watch?v=vh3tuL_DVsE'}
+        'yepyep': 'https://www.youtube.com/watch?v=vh3tuL_DVsE',
+        'systemisdown': 'https://www.youtube.com/watch?v=ILVfzx5Pe-A',
+        'wompwomp': 'https://www.youtube.com/watch?v=sC75aU47GRk',
+        'yaketysax': 'https://www.youtube.com/watch?v=ZnHmskwqCCQ'}
 
-def yepyep():
-    run('open %s' % (youtube_urls['yepyep']))
+def yt(vid=None):
+    if vid is None:
+        vid = _random.choice(youtube_urls.keys())
+    if vid == 'list':
+        print youtube_urls.keys()
+        return
 
-def pizza():
-    run('open %s' % (youtube_urls['pizza']))
+    run('open %s' % (youtube_urls[vid]))
 
-def manamana():
-    run('open %s' % (youtube_urls['manamana']))
-
-def lobster():
-    run('open %s' % (youtube_urls['lobster']))
-
-def happy():
-    run('open %s' % (youtube_urls['happy']))
-
-def random():
-    x = _random.choice(youtube_urls.values())
-    run('open %s' % (x))
+def coffee():
+    run('open http://support-coffeecam.jaalam.net')
 
 def say(say_this=None):
     if say_this is not None:
