@@ -63,11 +63,10 @@ fabfile = /home/<whatever>/shenanigans/mac-fabric/fabfile.py
 
 ## Commands:
 
-* pizza, manaman, lobster, happy
+* yt:<video>
   * play a selected youtube video
-
-* random
-  * play a random youtube video
+  * omit video name to play a random video
+  * `fab yt:list` to show available videos
 
 * snap
   * Take a photo and download it to your machine

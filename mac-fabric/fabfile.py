@@ -18,6 +18,10 @@ youtube_urls = {'pizza': 'https://www.youtube.com/watch?v=SIt2CdbBo_w',
 def yt(vid=None):
     if vid is None:
         vid = _random.choice(youtube_urls.keys())
+    if vid == 'list':
+        print youtube_urls.keys()
+        return
+
     run('open %s' % (youtube_urls[vid]))
 
 def coffee():
