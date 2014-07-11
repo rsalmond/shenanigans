@@ -12,32 +12,13 @@ youtube_urls = {'pizza': 'https://www.youtube.com/watch?v=SIt2CdbBo_w',
         'happy': 'https://www.youtube.com/watch?v=d-diB65scQU',
         'yepyep': 'https://www.youtube.com/watch?v=vh3tuL_DVsE',
         'systemisdown': 'https://www.youtube.com/watch?v=ILVfzx5Pe-A',
-        'wompwomp': 'https://www.youtube.com/watch?v=sC75aU47GRk'}
+        'wompwomp': 'https://www.youtube.com/watch?v=sC75aU47GRk',
+        'yaketysax': 'https://www.youtube.com/watch?v=ZnHmskwqCCQ'}
 
-def wompwomp():
-    run('open %s' % (youtube_urls['wompwomp']))
-
-def systemisdown():
-    run('open %s' % (youtube_urls['systemisdown']))
-
-def yepyep():
-    run('open %s' % (youtube_urls['yepyep']))
-
-def pizza():
-    run('open %s' % (youtube_urls['pizza']))
-
-def manamana():
-    run('open %s' % (youtube_urls['manamana']))
-
-def lobster():
-    run('open %s' % (youtube_urls['lobster']))
-
-def happy():
-    run('open %s' % (youtube_urls['happy']))
-
-def random():
-    x = _random.choice(youtube_urls.values())
-    run('open %s' % (x))
+def yt(vid=None):
+    if vid is None:
+        vid = _random.choice(youtube_urls.keys())
+    run('open %s' % (youtube_urls[vid]))
 
 def coffee():
     run('open http://support-coffeecam.jaalam.net')
