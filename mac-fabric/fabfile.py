@@ -28,7 +28,7 @@ def yt(vid=None):
 
 def freshpots():
     with cd('~/shenanigans/freshpots'):
-        filename = './fp%s.wav' % (str(_random.choice(range(1,6))))
+        filename = './fp%s.mp3' % (str(_random.choice(range(1,6))))
         run('afplay %s' % (filename))
 
 def coffee():
