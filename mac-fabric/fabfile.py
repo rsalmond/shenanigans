@@ -13,7 +13,8 @@ youtube_urls = {'pizza': 'https://www.youtube.com/watch?v=SIt2CdbBo_w',
         'yepyep': 'https://www.youtube.com/watch?v=vh3tuL_DVsE',
         'systemisdown': 'https://www.youtube.com/watch?v=ILVfzx5Pe-A',
         'wompwomp': 'https://www.youtube.com/watch?v=sC75aU47GRk',
-        'yaketysax': 'https://www.youtube.com/watch?v=ZnHmskwqCCQ'}
+        'yaketysax': 'https://www.youtube.com/watch?v=ZnHmskwqCCQ',
+        'limit': 'https://www.youtube.com/watch?v=DZz3y6r-5H8'}
 
 def yt(vid=None):
     if vid is None:
@@ -23,6 +24,12 @@ def yt(vid=None):
         return
 
     run('open %s' % (youtube_urls[vid]))
+
+
+def freshpots():
+    with cd('~/shenanigans/freshpots'):
+        filename = './fp%s.wav' % (str(_random.choice(range(1,6))))
+        run('afplay %s' % (filename))
 
 def coffee():
     run('open http://support-coffeecam.jaalam.net')
