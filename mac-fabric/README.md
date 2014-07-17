@@ -8,7 +8,12 @@ our mac (support-mini.jaalam.net).
 
 Python and [Fabric](http://www.fabfile.org/installing.html).
 
-# Set up:
+# Mac Set up:
+
+Put everything from the 'support-mini' dir into ~/Shenanigans
+on the mac.
+
+# Local Set up:
 
 You need a working SSH config for the host 'support-mini'.
 Generate a fresh keypair and copy it over to the mac with 
