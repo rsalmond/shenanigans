@@ -71,9 +71,10 @@ fabfile = /home/<whatever>/shenanigans/mac-fabric/fabfile.py
 * snap
   * Take a photo and download it to your machine
 
-* vol OR vol:`<NUMBER>`
-  * Retrive current volume setting
-  * Set the volume, valid integers are 0-100
+* vol
+  * Retrive current volume setting `fab vol`
+  * Set the volume `fab vol:<num>` valid range 0-100
+  * Increase or decrease volume by amount `fab vol:+<num>` or `fab vol:-<num>`
 
 * say:"some words"
   * Speak something out loud (ohgodwhy)
