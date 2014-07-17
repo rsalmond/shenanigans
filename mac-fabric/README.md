@@ -77,3 +77,9 @@ fabfile = /home/<whatever>/shenanigans/mac-fabric/fabfile.py
 
 * say:"some words"
   * Speak something out loud (ohgodwhy)
+
+* temperature
+  * Speak current readings from coffeecam temp probe
+
+* freshpots
+  [Fresh Pots!](https://www.youtube.com/watch?v=fhdCslFcKFU)
