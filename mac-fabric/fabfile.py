@@ -1,5 +1,7 @@
 from fabric.api import *
 from datetime import datetime
+import urllib
+import requests
 import random as _random
 from time import sleep
 
@@ -71,12 +73,13 @@ def vol(level=None, delta=None):
     else:
         run("osascript -e 'set volume output volume %s'" % (newvol))
 
-def test():
-    run("stuff=`ls -alh`; echo $stuff")
-
 def snap():
-    tmpfile = '/tmp/mac-mini %s.jpg' % (datetime.now())
-    run('imagesnap %s' % (tmpfile.replace(' ','\ ')))
-    files = get(tmpfile, local_path='.')
-    if files.succeeded:
-        run('rm %s' % (tmpfile.replace(' ', '\ ')))
+    tmpfile = 'mac-mini %s.jpg' % (datetime.now())
+    run('imagesnap ~/Sites/snaps/%s' % (tmpfile.replace(' ', '\ ')))
+    img = '<img src = "http://support-mini.jaalam.net/~support/snaps/%s" width=320 height=240>' % (tmpfile)
+    with cd('~/shenanigans/'):
+        run('./hipchat.sh %s' % (urllib.quote_plus(img)))
+
+def test():
+    import os
+    print("remote env %s" % (os.environ['PATH']))

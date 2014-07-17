@@ -69,7 +69,7 @@ fabfile = /home/<whatever>/shenanigans/mac-fabric/fabfile.py
   * `fab yt:list` to show available videos
 
 * snap
-  * Take a photo and download it to your machine
+  * Take a photo and post it in the support chat
 
 * vol
   * Retrive current volume setting `fab vol`
