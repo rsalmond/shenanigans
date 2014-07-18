@@ -41,12 +41,8 @@ def say(say_this=None):
         run('say %s' % (say_this))
 
 def temperature():
-	import os
-	from subprocess import Popen, PIPE
-
-	process = Popen(["curl", "-G", "http://support-coffeecam.jaalam.net/kitchen-temperature.php"], stdout=PIPE)
-	output, err = process.communicate()
-	exit_code = process.wait()
+    r = requests.get('http://support-coffeecam.jaalam.net/kitchen-temperature.php')
+    if r.ok:
         temperature = "The kitchen is currently " + output + " degrees celcius"
         run('say %s' % (temperature)) 
 
