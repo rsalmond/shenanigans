@@ -43,8 +43,8 @@ def say(say_this=None):
 def temperature():
     r = requests.get('http://support-coffeecam.jaalam.net/kitchen-temperature.php')
     if r.ok:
-        temperature = "The kitchen is currently " + output + " degrees celcius"
-        run('say %s' % (temperature)) 
+        temp = "The kitchen is currently " + r.text + " degrees celcius"
+        run('say %s' % (temp))
 
 def vol(level=None, delta=None):
     """ 'vol' get vol / 'vol:##' or vol:'-##' or '+##' set vol """
