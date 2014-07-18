@@ -3,7 +3,6 @@ from datetime import datetime
 import urllib
 import requests
 import random as _random
-from time import sleep
 
 env.use_ssh_config = True
 env.hosts = ['support-mini']
@@ -19,6 +18,7 @@ youtube_urls = {'pizza': 'https://www.youtube.com/watch?v=SIt2CdbBo_w',
         'limit': 'https://www.youtube.com/watch?v=DZz3y6r-5H8'}
 
 def yt(vid=None):
+    """ 'vid' random vid / 'vid:<name>' plays <name> / 'vid:list' list vids """
     if vid is None:
         vid = _random.choice(youtube_urls.keys())
     if vid == 'list':
@@ -29,18 +29,23 @@ def yt(vid=None):
 
 
 def freshpots():
+    """ Dave Grohl needs a fresh fucking pot! """
     with cd('~/shenanigans/freshpots'):
         filename = './fp%s.mp3' % (str(_random.choice(range(1,6))))
         run('afplay %s' % (filename))
 
 def coffee():
+    """ put the coffee cam up on the TV """
     run('open http://support-coffeecam.jaalam.net')
 
 def say(say_this=None):
+    """ say:"any damn thing you please" """
     if say_this is not None:
         run('say %s' % (say_this))
 
 def temperature():
+    """ poll coffeecam for latest temp data and speak it unto the support loft
+    """
     r = requests.get('http://support-coffeecam.jaalam.net/kitchen-temperature.php')
     if r.ok:
         temp = "The kitchen is currently " + r.text + " degrees celcius"
@@ -70,12 +75,9 @@ def vol(level=None, delta=None):
         run("osascript -e 'set volume output volume %s'" % (newvol))
 
 def snap():
+    """ snap a pic from the webcam and throw it in hipchat """
     tmpfile = 'mac-mini %s.jpg' % (datetime.now())
     run('imagesnap ~/Sites/snaps/%s' % (tmpfile.replace(' ', '\ ')))
     img = '<img src = "http://support-mini.jaalam.net/~support/snaps/%s" width=320 height=240>' % (tmpfile)
     with cd('~/shenanigans/'):
         run('./hipchat.sh %s' % (urllib.quote_plus(img)))
-
-def test():
-    import os
-    print("remote env %s" % (os.environ['PATH']))
