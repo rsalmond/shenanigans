@@ -88,4 +88,4 @@ fabfile = /home/<whatever>/shenanigans/mac-fabric/fabfile.py
   * Speak current readings from coffeecam temp probe
 
 * freshpots
-  [Fresh Pots!](https://www.youtube.com/watch?v=fhdCslFcKFU)
+  * [Fresh Pots!](https://www.youtube.com/watch?v=fhdCslFcKFU)
