@@ -23,9 +23,13 @@ def yt(vid=None):
         vid = _random.choice(youtube_urls.keys())
     if vid == 'list':
         print youtube_urls.keys()
+        print ' - or -'
+        print 'yt:[video id]'
         return
-
-    run('open %s' % (youtube_urls[vid]))
+    if vid in youtube_urls.keys():
+        run('open %s' % (youtube_urls[vid]))
+        return
+    run('open https://www.youtube.com/watch?v=%s' % (vid))
 
 
 def freshpots():
