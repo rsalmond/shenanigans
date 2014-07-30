@@ -85,3 +85,7 @@ def snap():
     img = '<img src = "http://support-mini.jaalam.net/~support/snaps/%s" width=320 height=240>' % (tmpfile)
     with cd('~/shenanigans/'):
         run('./hipchat.sh %s' % (urllib.quote_plus(img)))
+
+def clean():
+    """ Clean up the browser windows/tabs """
+    run (" ps -ef | grep -i chrome | grep -v grep | awk '{ print $2 }' | xargs -I {} kill -9 {} ")
