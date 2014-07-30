@@ -87,7 +87,12 @@ def snap():
         run('./hipchat.sh %s' % (urllib.quote_plus(img)))
 
 def clean():
+<<<<<<< HEAD
     """ Clean up the accumulated crap """
     run (" ps -ef | grep -i chrome | grep -v grep | awk '{ print $2 }' | xargs -I {} kill -9 {} ")
     run (" ps -ef | grep -i safari | grep -v grep | awk '{ print $2 }' | xargs -I {} kill -9 {} ")
     run (" ps -ef | grep -i spotify | grep -v grep | awk '{ print $2 }' | xargs -I {} kill -9 {} ")
+=======
+    """ Clean up the browser windows/tabs """
+    run (" ps -ef | grep -i chrome | grep -v grep | awk '{ print $2 }' | xargs -I {} kill -9 {} ")
+>>>>>>> ef2a7695af2c589e4d415db129053bfb9f2761e2
