@@ -31,6 +31,25 @@ def yt(vid=None):
         return
     run('open https://www.youtube.com/watch?v=%s' % (vid))
 
+def spotify(cmd=None):
+    #http://www.instructables.com/id/RFID-Controls-for-Spotify-on-OSX-using-hacked-Mir/step3/Spotify-osascript-commands/
+    cmds = {'track': 'name of current track',\
+            'skip': 'next track',\
+            'play': 'play',\
+            'stop': 'pause'}
+
+    if cmd is None:
+        cmd = 'track'
+    elif cmd == 'list':
+        print cmds.keys()
+        return
+    else:
+        cmd = cmd.strip().lower()
+
+    if cmd not in cmds:
+        print 'Unknown command %s' % (cmd)
+    else:
+        run("osascript -e 'tell application \"Spotify\" to %s'" % (cmds[cmd]))
 
 def freshpots():
     """ Dave Grohl needs a fresh fucking pot! """

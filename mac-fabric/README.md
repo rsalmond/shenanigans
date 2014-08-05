@@ -68,6 +68,11 @@ fabfile = /home/<whatever>/shenanigans/mac-fabric/fabfile.py
 
 ## Commands:
 
+* spotify:<cmd>
+  * 'play', 'stop', 'skip' do what you think
+  * 'list' to display available commands
+  * omit command to retrieve current track
+
 * yt:<video>
   * play a selected youtube video
   * omit video name to play a random video
