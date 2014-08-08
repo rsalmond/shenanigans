@@ -87,7 +87,15 @@ def milktemp():
     """
     r = requests.get('http://support-coffeecam.jaalam.net/milk-temperature.php')
     if r.ok:
-        temp = "The temperature in fridge the is currently " + r.text + " degrees celcius"
+        temp = "The temperature in the milk fridge the is currently " + r.text + " degrees celcius"
+        run('say %s' % (temp))
+
+def beertemp():
+    """ poll coffeecam for latest temp data and speak it unto the support loft
+    """
+    r = requests.get('http://support-coffeecam.jaalam.net/beer-temperature.php')
+    if r.ok:
+        temp = "The temperature in the beer fridge the is currently " + r.text + " degrees celcius"
         run('say %s' % (temp))
 
 def vol(level=None, delta=None):
