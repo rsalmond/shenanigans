@@ -125,9 +125,6 @@ def snap():
     """ snap a pic from the webcam and throw it in hipchat """
     tmpfile = 'mac-mini %s.jpg' % (datetime.now())
     run('imagesnap ~/Sites/snaps/%s' % (tmpfile.replace(' ', '\ ')))
-    img = '<img src = "http://support-mini.jaalam.net/~support/snaps/%s" width=320 height=240>' % (tmpfile)
-    with cd('~/shenanigans/'):
-        run('./hipchat.sh %s' % (urllib.quote_plus(img)))
 
 def clean():
     """ Clean up the accumulated crap """
