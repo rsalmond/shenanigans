@@ -132,6 +132,7 @@ def clean():
     run (" ps -ef | grep -i safari | grep -v grep | awk '{ print $2 }' | xargs -I {} kill -9 {} ")
     run (" ps -ef | grep -i spotify | grep -v grep | awk '{ print $2 }' | xargs -I {} kill -9 {} ")
     run (" ps -ef | grep -i vlc | grep -v grep | awk '{ print $2 }' | xargs -I {} kill -9 {} ")
+    run (" ps -ef | grep -i gotomeeting | grep -v grep | awk '{ print $2 }' | xargs -I {} kill -9 {} ")
 
 def reboot():
     """ Reboots the MacMini """
