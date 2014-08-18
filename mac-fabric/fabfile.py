@@ -168,6 +168,7 @@ def clocks():
     run('open http://free.timeanddate.com/clock/i4afqskf/n240/fn6/fs48/fc9ff/tc000/ftb/bas4/bacfff/pa12/tt0/tw1/th1/ta1/tb4')
 
 def chrome(cmd='list'):
+  """ chrome:(presenter, fullscreen, zoomin, zoomout, closetab, nexttab) """
   #Need to hide warnings because Activating chrome returns a non-zero
   with settings(
         hide('warnings', 'running', 'stdout', 'stderr'),
