@@ -36,7 +36,8 @@ def spotify(cmd=None):
     cmds = {'track': 'name of current track',\
             'skip': 'next track',\
             'play': 'play',\
-            'stop': 'pause'}
+            'stop': 'pause',\
+            'status' : 'player state'}
 
     if cmd is None:
         cmd = 'track'
