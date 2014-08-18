@@ -162,6 +162,7 @@ def talisker():
     run('open http://www.securitywizardry.com/radar.htm')
     
 def clocks():
+    """ Add four time zone tabs to rotation """
     run('open http://free.timeanddate.com/clock/i4afqskf/n256/fn6/fs48/fc9ff/tc000/ftb/bas4/bacfff/pa12/tt0/tw1/th1/ta1/tb4')
     run('open http://free.timeanddate.com/clock/i4afqskf/fn6/fs48/fc9ff/tc000/ftb/bas4/bacfff/pa12/tt0/tw1/th1/ta1/tb4')
     run('open http://free.timeanddate.com/clock/i4afqskf/n43/fn6/fs48/fc9ff/tc000/ftb/bas4/bacfff/pa12/tt0/tw1/th1/ta1/tb4')
