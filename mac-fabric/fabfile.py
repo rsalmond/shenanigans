@@ -57,8 +57,8 @@ def freshpots():
     """ Dave Grohl needs a fresh fucking pot! """
     
     # Pause Spotify if it is playing and crank volume
-    spotify-status = run("osascript -e 'tell application \"Spotify\" to player state'")
-    if spotify-status == 'playing':
+    spotifystatus = run("osascript -e 'tell application \"Spotify\" to player state'")
+    if spotifystatus == 'playing':
         run("osascript -e 'tell application \"Spotify\" to pause'")
     oldvol = run("osascript -e 'output volume of (get volume settings)'")
     run("osascript -e 'set volume output volume 100'")
@@ -70,7 +70,7 @@ def freshpots():
     
     # Reset volume and resume Spotify
     run("osascript -e 'set volume output volume %s'" % (oldvol))
-    if spotify-status == 'playing':
+    if spotifystatus == 'playing':
         run("osascript -e 'tell application \"Spotify\" to play'")
 
 def coffee():
@@ -153,3 +153,14 @@ def clean():
 def reboot():
     """ Reboots the MacMini """
     run (" sudo shutdown -r now ")
+
+def talisker():
+    """ Load the Talisker Internet Radar """
+    run('open www.securitywizardry.com/radar.htm')
+    
+def clocks():
+    run('open http://free.timeanddate.com/clock/i4afqskf/n256/fn6/fs48/fc9ff/tc000/ftb/bas4/bacfff/pa12/tt0/tw1/th1/ta1/tb4')
+    run('open http://free.timeanddate.com/clock/i4afqskf/fn6/fs48/fc9ff/tc000/ftb/bas4/bacfff/pa12/tt0/tw1/th1/ta1/tb4')
+    run('open http://free.timeanddate.com/clock/i4afqskf/n43/fn6/fs48/fc9ff/tc000/ftb/bas4/bacfff/pa12/tt0/tw1/th1/ta1/tb4')
+    run('open http://free.timeanddate.com/clock/i4afqskf/n240/fn6/fs48/fc9ff/tc000/ftb/bas4/bacfff/pa12/tt0/tw1/th1/ta1/tb4')
+
