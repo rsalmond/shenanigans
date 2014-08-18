@@ -57,13 +57,12 @@ def freshpots():
     """ Dave Grohl needs a fresh fucking pot! """
     
     # Pause Spotify if it is playing and crank volume
-    spotifystatus = run("osascript -e 'tell application \"Spotify\" to player state'")
-    if spotifystatus == 'playing':
+    spotify-status = run("osascript -e 'tell application \"Spotify\" to player state'")
+    if spotify-status == 'playing':
         run("osascript -e 'tell application \"Spotify\" to pause'")
     oldvol = run("osascript -e 'output volume of (get volume settings)'")
     run("osascript -e 'set volume output volume 100'")
     time.sleep(1)
-    
     with cd('~/shenanigans/freshpots'):
         filename = './fp%s.mp3' % (str(_random.choice(range(1,6))))
         run('afplay %s' % (filename))
@@ -71,7 +70,7 @@ def freshpots():
     
     # Reset volume and resume Spotify
     run("osascript -e 'set volume output volume %s'" % (oldvol))
-    if spotifystatus == 'playing':
+    if spotify-status == 'playing':
         run("osascript -e 'tell application \"Spotify\" to play'")
 
 def coffee():
