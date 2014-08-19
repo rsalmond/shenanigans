@@ -169,27 +169,31 @@ def clocks():
     run('open http://free.timeanddate.com/clock/i4afqskf/n240/fn6/fs48/fc9ff/tc000/ftb/bas4/bacfff/pa12/tt0/tw1/th1/ta1/tb4')
 
 def chrome(cmd='list'):
-  """ chrome:(presenter, fullscreen, zoomin, zoomout, closetab, nexttab) """
-  #Need to hide warnings because Activating chrome returns a non-zero
-  with settings(
-        hide('warnings', 'running', 'stdout', 'stderr'),
-        warn_only=True
-  ):
+    """ chrome:(presenter, fullscreen, zoomin, zoomout, closetab, nexttab, prevtab, reload) """
     cmds = {'presenter': 'tell app "System Events" to keystroke "F" using command down',\
             'fullscreen': 'tell app "System Events" to keystroke "f" using command down control down',\
             'zoomin': 'tell app "System Events" to keystroke "+" using command down',\
             'zoomout': 'tell app "System Events" to keystroke "-" using command down',\
-            'closetab' : 'tell app "System Events" to keystroke "w" using command down',\
-            'nexttab' : 'tell app "System Events" to key code 48 using control down'}
+            'closetab' : 'tell app "Google Chrome" to close active tab of window 1',\
+            'nexttab' : 'tell app "System Events" to key code 48 using control down',\
+            'reload' : 'tell app "Google Chrome" to reload active tab of window 1'}
 
     if cmd == 'list':
         print cmds.keys()
         return
     else:
         cmd = cmd.strip()
-
-    if cmd not in cmds:
-        print 'Unknown command %s' % (cmd)
-    else:
-        run("osascript -e 'tell application \"Chrome\" to activate'")    
-        run("osascript -e '%s'" % (cmds[cmd]))
+        
+	#Need to hide warnings because Activating chrome returns a non-zero
+  	with settings(
+        hide('warnings', 'running', 'stdout', 'stderr'),
+        warn_only=True
+       	): 
+        		
+    		if cmd not in cmds:
+        		print 'Unknown command %s' % (cmd)
+    		else:
+        		if "System Events" in (cmds[cmd]):
+           			run("osascript -e 'tell application \"Chrome\" to activate'")
+           			
+        		run("osascript -e '%s'" % (cmds[cmd]))
