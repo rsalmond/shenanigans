@@ -161,6 +161,10 @@ def talisker():
     """ Load the Talisker Internet Radar """
     run('open http://www.securitywizardry.com/radar.htm')
     
+def map():
+    """ Load Google Earth """
+    run('open http://support-coffeecam/ge.html')
+    
 def clocks():
     """ Add four time zone tabs to rotation """
     run('open http://free.timeanddate.com/clock/i4afqskf/n256/fn6/fs48/fc9ff/tc000/ftb/bas4/bacfff/pa12/tt0/tw1/th1/ta1/tb4')
