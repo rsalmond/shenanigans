@@ -33,6 +33,7 @@ def yt(vid=None):
     run('open https://www.youtube.com/watch?v=%s' % (vid))
 
 def spotify(cmd=None):
+    """ spotify:(track, skip, play, stop, status) """
     #http://www.instructables.com/id/RFID-Controls-for-Spotify-on-OSX-using-hacked-Mir/step3/Spotify-osascript-commands/
     cmds = {'track': 'name of current track',\
             'skip': 'next track',\
