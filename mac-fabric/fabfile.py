@@ -165,7 +165,11 @@ def talisker():
 def map():
     """ Load Google Earth """
     run('open http://support-coffeecam/ge.html')
-    
+   
+def hoopla():
+    """show the hoopla dashboard for sales"""
+    run('open https://tv.hoopla.net/hoopla_tv/Y72HMJpuBz3GcowcPaNm')
+
 def clocks():
     """ Add four time zone tabs to rotation """
     run('open http://free.timeanddate.com/clock/i4afqskf/n256/fn6/fs48/fc9ff/tc000/ftb/bas4/bacfff/pa12/tt0/tw1/th1/ta1/tb4')
