@@ -17,7 +17,8 @@ youtube_urls = {'pizza': 'https://www.youtube.com/watch?v=SIt2CdbBo_w',
         'wompwomp': 'https://www.youtube.com/watch?v=sC75aU47GRk',
         'yaketysax': 'https://www.youtube.com/watch?v=ZnHmskwqCCQ',
         'limit': 'https://www.youtube.com/watch?v=DZz3y6r-5H8',
-        'jurrbs': 'https://www.youtube.com/watch?v=rHfQQY2WqCQ'}
+        'jurrbs': 'https://www.youtube.com/watch?v=rHfQQY2WqCQ',
+        'funkoverload': 'https://www.youtube.com/watch?v=Wga5A6R9BJg'}
 
 def yt(vid=None):
     """ 'vid' random vid / 'vid:<name>' plays <name> / 'vid:list' list vids """
