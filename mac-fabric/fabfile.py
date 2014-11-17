@@ -76,6 +76,11 @@ def freshpots():
     if spotifystatus == 'playing':
         run("osascript -e 'tell application \"Spotify\" to play'")
 
+def fakechat():
+
+    with cd('~/shenanigans/misc'):
+        run('afplay fakechat.wav')
+
 def coffee():
     """ put the coffee cam up on the TV """
     run('open http://support-coffeecam.jaalam.net')
