@@ -64,7 +64,7 @@ def freshpots():
     if spotifystatus == 'playing':
         run("osascript -e 'tell application \"Spotify\" to pause'")
     oldvol = run("osascript -e 'output volume of (get volume settings)'")
-    run("osascript -e 'set volume output volume 100'")
+    run("osascript -e 'set volume output volume 75'")
     time.sleep(1)
     with cd('~/shenanigans/freshpots'):
         filename = './fp%s.mp3' % (str(_random.choice(range(1,6))))
