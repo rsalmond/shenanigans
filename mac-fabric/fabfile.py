@@ -77,9 +77,12 @@ def freshpots():
         run("osascript -e 'tell application \"Spotify\" to play'")
 
 def fakechat():
-
     with cd('~/shenanigans/misc'):
         run('afplay fakechat.wav')
+
+def shitstorm():
+    with cd('~/shenanigans/misc'):
+        run('afplay air.mp3')
 
 def coffee():
     """ put the coffee cam up on the TV """
