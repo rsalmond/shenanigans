@@ -82,7 +82,7 @@ def fakechat():
 
 def shitstorm():
     with cd('~/shenanigans/misc'):
-        run('afplay air.mp3')
+        run('afplay air.wav')
 
 def coffee():
     """ put the coffee cam up on the TV """
