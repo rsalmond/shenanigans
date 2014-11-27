@@ -20,6 +20,7 @@ youtube_urls = {'pizza': 'https://www.youtube.com/watch?v=SIt2CdbBo_w',
         'jurrbs': 'https://www.youtube.com/watch?v=rHfQQY2WqCQ',
         'funkoverload': 'https://www.youtube.com/watch?v=Wga5A6R9BJg',
         'christmastree': 'https://www.youtube.com/watch?v=Sy1Qlxgo2ek',
+        'batman': 'https://www.youtube.com/watch?v=VSaDPc1Cs5U',
         'montage':'https://www.youtube.com/watch?v=pFrMLRQIT_k'}
 
 def yt(vid=None):
