@@ -59,6 +59,29 @@ def spotify(cmd=None):
     else:
         run("osascript -e 'tell application \"Spotify\" to %s'" % (cmds[cmd]))
 
+def quicktime(cmd=None):
+    """ quicktime:(play, stop, pause, resume, fullscreen, quit) """
+    cmds = {'play': 'play the front document',\
+            'stop': 'stop the front document',\
+            'pause': 'pause the front document',\
+            'resume': 'play the front document',\
+            'fullscreen': 'present the front document',\
+            'quit': 'close the application'}
+
+    if cmd is None:
+        cmd = 'list'
+    elif cmd == 'list':
+        print cmds.keys()
+        return
+    else:
+        cmd = cmd.strip().lower()
+
+    if cmd not in cmds:
+        print 'Unknown command %s' % (cmd)
+    else:
+        run("osascript -e 'tell application \"QuickTime Player\" to %s'" % (cmds[cmd]))
+
+
 def freshpots():
     """ Dave Grohl needs a fresh fucking pot! """
     
