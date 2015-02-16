@@ -117,6 +117,13 @@ def coffee():
     time.sleep(1)
     run("osascript -e 'tell app \"System Events\" to keystroke \"F\" using command down'")
 
+def attack_map():
+    """ put the Norse IP Attack Map on the TV """
+    run('open http://map.ipviking.com/')
+    # run("osascript -e 'tell app \"Chrome\" to activate'")
+    time.sleep(1)
+    run("osascript -e 'tell app \"System Events\" to keystroke \"F\" using command down'")
+
 def say(say_this=None):
     """ say:"any damn thing you please" """
     if say_this is not None:
