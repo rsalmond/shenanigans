@@ -102,6 +102,10 @@ def freshpots():
     if spotifystatus == 'playing':
         run("osascript -e 'tell application \"Spotify\" to play'")
 
+def ytlaf():
+    with cd('~/shenanigans/misc'):
+        run('afplay ytlaf.wav')
+
 def fakechat():
     with cd('~/shenanigans/misc'):
         run('afplay fakechat.wav')
